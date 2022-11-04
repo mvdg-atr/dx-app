@@ -1,10 +1,14 @@
-<div class="row">
+<div class="row justify-content-center">
   <dx-data-grid
     class="col-6"
     [dataSource]="dataSource"
-    [showBorders]="true">
-    <dxi-column dataField="name"></dxi-column>
-    <dxi-column dataField="value"></dxi-column>
+    [showBorders]="true"
+    (filterValueChange)="onValueChange($event)"
+  >
+    <dxi-column dataField="name" [width]="200"></dxi-column>
+    <dxi-column dataField="value" alignment="left" [width]="200"></dxi-column>
+    <dxo-filter-row [visible]="true"></dxo-filter-row>
+    <dxo-filter-panel [visible]="true"></dxo-filter-panel>
   </dx-data-grid>
 </div>
 
